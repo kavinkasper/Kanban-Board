@@ -1,0 +1,20 @@
+#Columnform{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    height: 150px;
+}
+
+mat-form-field{
+    width: 90%;
+    margin-top: 10%;
+}
+
+button{
+    width: 50%;
+}
+
+*{
+    font-family: "Roboto Mono",monospace;
+}

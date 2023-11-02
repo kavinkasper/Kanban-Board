@@ -1,0 +1,82 @@
+<div>
+  <app-header></app-header>
+</div>
+
+
+<div class="back-hero">
+
+  <div style="margin-left: 2.2%; margin-bottom: 35%;">
+    <section class="side">
+      <div style="display: flex;margin-top: 3%;">
+        <p style="font-size: 22px;  font-family: 'Roboto Mono', monospace;margin-right: 2%;"><b>Board Name:</b>
+          {{boardname}}</p>
+        <span *ngIf="AdminEmail===Admin" style="cursor: pointer;" matTooltip="Click here to Delete Board" class="material-symbols-outlined"
+          (click)="deleteboard()">
+          scan_delete
+        </span>
+      </div>
+      <div style="margin-bottom: 3.5%;margin-top: 2.5%;  font-family: 'Roboto Mono', monospace;">
+        <p style="font-size: 20px;margin-bottom: 1%;"><b>Admin:</b></p>
+        <div style="margin-bottom: 3%;">
+          <img style="width: 30px;height: 30px;" src="../assets/user.png" />
+          <span style="font-size: 18px;">{{AdminEmail}}</span>
+        </div>
+        <p style="font-size: 20px;margin-bottom: 1%;"><b>Contributors:</b></p>
+        <div *ngFor="let mem of team_members">
+          <img style="width: 30px;height: 30px;" src="../assets/user.png" />
+          <span style="font-size: 18px;">{{mem}}</span>
+        </div>
+      </div>
+      <div *ngIf="columns.length < 3 && AdminEmail===Admin" style="margin-left: 90%;" class="column-icon">
+        <img matTooltip="Click here to Add Column" style="height: 40px;width: auto;margin-top: 1.5%;"
+          src="../assets/columns.png" (click)="addcolumn()">
+      </div>
+      <div cdkDropListGroup
+        style="font-family: 'Roboto Mono', monospace; display: flex;flex-wrap: wrap;margin-left: 22%;margin-top: -110px;"
+        class="main-column">
+        <div  *ngFor="let col of columns" 
+        style="margin-right: 4%; margin-top: -17%; border: 2px solid rgb(3, 3, 3);width: 25%;border-radius: 15px;height: auto;box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);"[attr.id]="col.column_name">
+          <p style="margin-right: 8%;width: 100%; font-size: 20px; margin-top: 4%;margin-left: 1%;"><b>Column Name:</b>
+            {{col.column_name}}
+            <a *ngIf="AdminEmail===Admin" class="delete"><span class="material-symbols-outlined" (click)="deletecolumn(col.column_name)">
+                delete_forever
+              </span></a>
+          </p>
+          <div>
+            <div cdkDropList [cdkDropListData]="columnTasks[col.column_name]" (cdkDropListDropped)="onTaskDrop($event, col.column_name)">
+              <span  *ngIf="col === columns[0] && AdminEmail===Admin"  matTooltip="Click here to Add Task" class="material-icons" (click)="taskadd(col.column_name)"
+                    style="height: 30px; width: auto; margin-left: 80%; cursor: pointer;">
+                add_task
+              </span>
+              <span *ngIf="col !== columns[0]" class="material-icons">
+              </span>
+              <span *ngIf="AdminEmail!==Admin" class="material-icons">
+              </span>
+            <div *ngFor="let task of columnTasks[col.column_name]" cdkDrag [cdkDragData]="task">
+              <mat-card [ngStyle]="{'border': '5px solid ' + getPriorityColor(task.priority)}" class="example-card"
+                style="margin-top: 2%;border-radius: 25px;">
+                <mat-card-header>
+                  <mat-card-title><b>Task Name: </b>{{ task.name }}</mat-card-title>
+                  <mat-card-subtitle style="font-size: 17px;" [ngStyle]="{'color': getPriorityColor(task.priority) }"><b
+                      style="color: black;">Task Priority: </b>{{ task.priority
+                    }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content style="font-size: 17px;">
+                  <p><b>AssigneeEmail: </b>{{ task.assigneeEmail }}</p>
+                  <button mat-icon-button matTooltip="Click here to delete the task"
+                    (click)="deletetask(task.name, col.column_name)"><mat-icon>delete_outline</mat-icon></button>
+                  <button mat-icon-button matTooltip="Click here to Update the task"
+                    (click)="taskdetails(task,col.column_name)"><span class="material-symbols-outlined">
+                      edit_square
+                    </span></button>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+</div>
+

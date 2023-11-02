@@ -1,0 +1,16 @@
+<div id="team_member">
+<form [formGroup]="boarddetails">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your Board_Name</mat-label>
+      <input matInput formControlName="boardname">
+      <mat-error *ngIf="boardname?.errors?.['required']">
+        Board Name is required.
+    </mat-error>
+    <mat-error *ngIf="boardname?.errors?.['minlength']">
+      Board Name must have minimum length of 2 characters
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="accent" type="submit" (click)="updateboard()">Update_Board</button>
+  </form>
+</div>

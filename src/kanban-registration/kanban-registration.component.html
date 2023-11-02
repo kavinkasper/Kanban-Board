@@ -1,0 +1,74 @@
+<div><app-header-main></app-header-main>
+</div>
+<div style="display: flex;">
+  <div>
+    <img id="image" src="../assets/draw1.png" />
+  </div>
+  <div id="registerForm">
+    <h1 id="welcomeLine">Welcome to sign up page</h1>
+    <form [formGroup]="Registeringdetails" (ngSubmit)="onsubmit()">
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="emailvalue?.errors?.['invalidemail']">
+          Enter valid email id.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your Name</mat-label>
+        <input matInput formControlName="username">
+        <mat-error *ngIf="usernnamevalue?.errors?.['required']">
+          Name is required
+        </mat-error>
+        <mat-error *ngIf="usernnamevalue?.errors?.['minlength']">
+          Name must have minimum length of 3 characters
+        </mat-error>
+        <mat-error *ngIf="usernnamevalue?.errors?.['invalidname']">
+          Name cannot start with numbers or symbol.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="passwordvalue?.errors?.['required']">
+          Password is required.
+        </mat-error>
+        <mat-error *ngIf="passwordvalue?.errors?.['pattern']">
+          Password should have a minimum 8 characters with at least one symbol, one upper-case letter, one
+          lower-case letter, and one number.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your ConfirmPassword</mat-label>
+        <input matInput type="password" formControlName="confirmpassword">
+        <mat-error *ngIf="confirmpasswordvalue?.errors?.['required']">
+          Confirm Password is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-error *ngIf="Registeringdetails?.errors?.['mustMatch']">
+        Password and Confirm Password should match.
+      </mat-error>
+      <br>
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your Mobilenumber</mat-label>
+        <input matInput formControlName="mobilenumber">
+        <mat-error *ngIf="mobilenumbervalue?.errors?.['required']">
+          Mobile Number is required.
+        </mat-error>
+        <mat-error *ngIf="mobilenumbervalue?.errors?.['pattern']">
+          Invalid Mobile Number.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-checkbox class="example-margin">I agree with Terms and Conditions</mat-checkbox>
+      <br>
+      <button color="primary" mat-raised-button type="submit" [disabled]="!Registeringdetails.valid">Register</button>
+    </form>
+  </div>
+</div>
+<!-- <div id="login" routerLink="/login">
+  <p>I am Already Member</p>
+</div> -->

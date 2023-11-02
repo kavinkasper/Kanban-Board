@@ -1,0 +1,48 @@
+img{
+    margin-top: -15%;
+}
+mat-form-field{
+    width: 70%;
+    margin-left: 16%;
+}
+  
+
+button{
+    width: 50%;
+    padding: 25px;
+    border-radius: 25px;
+    margin-left: 26%;
+}
+.loginImage
+{
+    height:fit-content;
+    transform: scale(0.7);
+}
+
+#loginform{
+    margin-top: 48%;
+    box-shadow:rgba(25, 146, 246, 0.3) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    height: 36%;
+    width: 115%;
+    border-radius: 15px;
+
+}
+
+#formheading{
+    /* margin-top: 15%; */
+    padding-top: 8%;
+    padding-bottom: 4%;
+    font-size: 25px;
+    margin-left: 5.5%;
+
+}
+
+#logintosignup{
+    margin-left: 20%;
+    margin-top: 5%;
+    font-size: large;
+}
+
+*{
+    font-family: "Roboto Mono",monospace;
+}

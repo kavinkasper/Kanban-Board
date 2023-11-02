@@ -1,0 +1,52 @@
+/* mat-card-title{
+    font-size: 25px;
+    margin-top: 3.2%;
+    margin-left: 5%;
+}
+
+body {
+    background-image: url("../assets/360_F_652932115_r5n7ltASe1ICQGTuh1a4vLLpEXIXumRC.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
+
+mat-card-title {
+    font-size: 25px;
+    margin-top: 3.2%;
+    margin-left: 5%;
+}
+
+.hero {
+    margin-left: 3%;
+    margin-top: 3%;
+    width: 40%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+/* style="height: 70px;width: 80%;margin-bottom: 5%; cursor: pointer; font-family: 'Roboto Mono', monospace;margin-top: 5%;" */
+#card{
+    height: 70px;
+    width: 80%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    font-family: "Roboto Mono",monospace;
+    margin-top: 5%;
+
+}

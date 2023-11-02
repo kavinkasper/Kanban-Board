@@ -1,0 +1,66 @@
+<div id="taskform">
+<form [formGroup]="taskdetails" (ngSubmit)="taskadding()">
+    <mat-form-field appearance="outline" style="margin-top: 4%;" >
+      <mat-label>Enter your Name</mat-label>
+      <input matInput type="text" formControlName="name" minlength="2">
+      <mat-error *ngIf="taskname?.errors?.['required']">
+        Task Name is required.
+    </mat-error>
+    <mat-error *ngIf="taskname?.errors?.['minlength']">
+      Task Name must have minimum length of 2 characters
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your Description</mat-label>
+      <textarea matInput type="text" formControlName="description" ></textarea>
+      <mat-error *ngIf="taskdescription?.errors?.['required']">
+        Task Description is required.
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-radio-group formControlName="priority">
+        <mat-radio-button value="HIGH">HIGH</mat-radio-button>
+        <mat-radio-button value="MEDIUM">MEDIUM</mat-radio-button>
+        <mat-radio-button value="LOW">LOW</mat-radio-button>
+      </mat-radio-group>
+      <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose the Startdate</mat-label>
+      <input matInput [min]="start" [matDatepicker]="startDatePicker" formControlName="startDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #startDatePicker></mat-datepicker>
+      <mat-error *ngIf="taskstartDate?.errors?.['required']">
+        Starting date is required for Task.
+    </mat-error>
+    </mat-form-field>
+    <br>
+        
+    <mat-form-field appearance="outline">
+      <mat-label>Choose the Duedate</mat-label>
+      <input matInput [min]="due" [matDatepicker]="dueDatePicker" formControlName="dueDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="dueDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #dueDatePicker></mat-datepicker>
+      <mat-error *ngIf="taskdueDate?.errors?.['required']">
+        Due date is required for Task.
+    </mat-error>
+    </mat-form-field>
+    
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Assignee Email</mat-label>
+      <mat-select formControlName="assigneeEmail">
+        <mat-option *ngFor="let member of teammembers" [value]="member">
+          {{member}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="taskassigneeEmail?.errors?.['required']">
+        AssigneeEmail is required for Task.
+    </mat-error>
+    </mat-form-field>    
+    <br>
+    <button id="button" mat-raised-button color="primary" type="submit" [disabled]="!taskdetails.valid">Add Task</button>
+  </form>
+</div>

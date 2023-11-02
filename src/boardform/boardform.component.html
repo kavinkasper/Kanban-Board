@@ -1,0 +1,16 @@
+<div id="boardform">
+    <form [formGroup]="boarddetails" (ngSubmit)="onsubmit()">
+      <mat-form-field appearance="outline">
+          <mat-label>Enter your BoardName</mat-label>
+          <input matInput type="text"formControlName="boardname"  required minlength="2">
+          <mat-error *ngIf="boardname?.errors?.['required']">
+            Board Name is required.
+        </mat-error>
+        <mat-error *ngIf="boardname?.errors?.['minlength']">
+          Board Name should be at least 2 characters long.
+        </mat-error>
+        </mat-form-field> 
+        <br>
+        <button mat-raised-button color="accent" type="submit" [disabled]="!boarddetails.valid">SAVE</button>
+  </form>
+</div>

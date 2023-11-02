@@ -1,0 +1,17 @@
+#divbox{
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+h3{
+    width: 96%;
+    margin-left: 2%;
+}
+
+button{
+    margin-top: -6%;
+    margin-left: 20%;
+    border-radius: 25px;
+}
+

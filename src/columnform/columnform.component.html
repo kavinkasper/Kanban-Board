@@ -1,0 +1,16 @@
+<div id="Columnform">
+<form [formGroup]="columndetails">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your column_name</mat-label>
+      <input matInput formControlName="column_name" minlength="2">
+      <mat-error *ngIf="columnname?.errors?.['required']">
+        Column Name is required.
+    </mat-error>
+    <mat-error *ngIf="columnname?.errors?.['minlength']">
+      Column Name must have minimum length of 2 characters
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="accent" type="submit" (click)="savecolumn()">Add_Column</button>
+  </form>
+</div>

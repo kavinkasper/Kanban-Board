@@ -1,0 +1,39 @@
+img{
+    width: 100%;
+    height: 600px;
+    border-radius: 15px;
+}
+
+#button{
+    margin-top: -38%;
+    margin-left: 85%;
+}
+
+#column{
+    margin-top: 35%;
+}
+
+.heading{
+    text-align: center;
+}
+
+.about_content{
+    margin-top: 3%;
+    margin-right: 5%;
+    font-size: 17px;
+    color: rgb(73, 73, 73);
+}
+
+#CONTENT{
+    margin-top: 16%;
+    font-size: 60px;
+    margin-left: 3%;
+}
+
+b{
+    font-size: large;
+}
+*{
+    font-family: "Roboto Mono",monospace;
+
+}

@@ -1,0 +1,19 @@
+mat-form-field{
+    width: 70%;
+    margin-bottom: 1.5%;
+    margin-left: 15%;
+}
+
+#button{
+    margin-left: 33%;
+    padding: 25px;
+    border-radius: 25px;
+    margin-bottom: 5%;
+}
+
+#profileForm{
+    margin-top: 5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;    width: 30%;
+    height: fit-content;
+    border-radius: 30px;
+}

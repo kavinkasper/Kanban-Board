@@ -1,0 +1,49 @@
+mat-form-field{
+    width: 65%;
+    margin-bottom: 1.0%;
+}
+
+button{
+    width: 35%;
+    text-align: center;
+    margin-left: 6%;
+    padding: 25px;
+    border-radius: 25px;
+    margin-bottom: 7%;
+}
+
+#image{
+    width: 110%;
+    height: 109%;
+}
+
+#registerForm{
+    width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;    margin-right: 10%;
+    text-align: center;
+    margin-top: 4%;
+    border-radius: 40px;
+    margin-left: 4%;
+}
+
+#welcomeLine{
+    margin-top: 6%;
+    margin-right: 1%;
+}
+
+.example-margin{
+    margin-top: -4%;
+}
+
+#login{
+    margin-left: 72.5%;
+    margin-top: 2%;
+    color:rgb(138, 37, 233);
+    font-size: large;
+    border-bottom: 2px solid black;
+    width: fit-content;
+}
+
+*{
+    font-family: "Roboto Mono",monospace;
+}

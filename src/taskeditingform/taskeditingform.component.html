@@ -1,0 +1,44 @@
+<div id="taskform">
+<form #editTaskForm="ngForm" (ngSubmit)="onSubmit(editTaskForm)">
+
+    <mat-form-field appearance="outline" style="margin-top: 4%;">
+      <mat-label>Task Name</mat-label>
+      <input matInput name="name" [(ngModel)]="taskform.name" required placeholder="Task Name">
+    </mat-form-field>
+    <br>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput name="description" [(ngModel)]="taskform.description" required placeholder="Description"></textarea>
+    </mat-form-field>
+    <br>
+  
+    <mat-radio-group name="priority" [(ngModel)]="taskform.priority">
+        <mat-radio-button value="HIGH">HIGH</mat-radio-button>
+        <mat-radio-button value="MEDIUM">MEDIUM</mat-radio-button>
+        <mat-radio-button value="LOW">LOW</mat-radio-button>
+      </mat-radio-group>
+    <br>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Start Date</mat-label>
+      <input matInput name="startDate" [(ngModel)]="taskform.startDate" required placeholder="Start Date">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Due Date</mat-label>
+      <input matInput name="dueDate" [(ngModel)]="taskform.dueDate" required placeholder="Due Date">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Assignee Email</mat-label>
+      <input matInput name="assigneeEmail" [(ngModel)]="taskform.assigneeEmail" required placeholder="Assignee Email">
+    </mat-form-field>
+    <br>
+
+    <button id="button" mat-raised-button color="primary" type="submit">Update Task</button>
+  </form>
+</div>
+  

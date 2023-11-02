@@ -1,0 +1,20 @@
+<mat-toolbar style="background-color: rgb(186, 226, 240);">
+  <img routerLink="" id="image" src="../assets/kanban-tool-logo-5d881ef6916e54ea554f031f90aa2e6202e6a81188fc8449b277b2097f2b6ebb.png" />
+  <div class="demo-section">
+    <button *ngIf="registerboolean" style="margin-right: 4%;color: rgb(8, 74, 181);font-size: medium;padding-bottom: 5px;box-shadow: #708090 0px 50px 100px -20px, #708090 0px 30px 60px -30px, #708090 0px -2px 6px 0px inset;" mat-button routerLink="/register">Register</button>
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon matBadge="{{messages.length}}" matBadgeColor="warn"
+        aria-hidden="false">event_note</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <div *ngFor="let msg of messages">
+        <button mat-menu-item>{{msg}}</button>
+      </div>
+    </mat-menu>
+  </div>
+  <button mat-button style="margin-right: 2%;" matTooltip="Click here to go to Board page"
+    (click)="board()">Boards</button>
+  <button id="button"  mat-button [matMenuTriggerFor]="Usermenu">Hello {{UserName}}</button>
+  <mat-menu #Usermenu="matMenu" >
+    <button mat-menu-item routerLink="/profile"><b>Profile</b></button>
+    <button mat-menu-item (click)="log()"><b>Logout</b></button>
+  </mat-menu>
+</mat-toolbar>

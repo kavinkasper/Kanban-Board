@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
+
+.side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.back-hero {
+    background-image: url("../assets/3081783.jpg");
+    background-size: contain;
+    background-position: center;
+    height: 700px;
+    object-fit: scale-down;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+/* @keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+} */
+
+
+.column-icon {
+    position: relative;
+    top: 50vh;
+}
+
+.column-icon:hover {
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+/* style="margin-right: 4%; margin-top: -10%; border: 2px solid rgb(3, 3, 3);width: 25%;border-radius: 15px;height: auto;box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);" */
+/* .main-column {
+    margin-left: 420px;
+    
+} */
+
+.inner-column{
+    margin-right: 4%;
+    border: 2px solid rgb(3, 3, 3);
+    width: 25%;
+    border-radius: 15px;
+    height: auto;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: -10%;
+
+}
+
+.line {
+    border-left: 1px solid black;
+    height: 100%;
+    position: absolute;
+    margin-top: 35.5%;
+    left: 22%;
+}
+
+
+.delete:hover {
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}

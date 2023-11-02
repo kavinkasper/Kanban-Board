@@ -1,0 +1,63 @@
+<!-- <div>
+    <app-header></app-header>
+</div>
+
+<div style="display: flex;">
+  <div style="margin-top: 5%;margin-left: 20%; width: 45%;">
+<div *ngFor="let board of boardnames" >
+<mat-card  style="height: 70px;margin-bottom: 5%;">
+  <div style="display: flex;">
+      <img style="width: 8%;height: auto;margin-top: 3.2%;margin-left: 2%;" src="../assets/board.png"/>
+    <mat-card-title routerLink="{{board}}">{{board}}</mat-card-title>
+    <img  matTooltip="Click here to update Boards" style="width: 4%;height: 30px;margin-top: 3.2%;margin-left: 5%;margin-right: 5%;" src="../assets/edit.png" (click)="updateboards(board)"/>
+    <img matTooltip="Click here to Add Team_member" style="width: 4%;height: 30px;margin-top: 3.2%;margin-left: auto;margin-right: 5%;" src="../assets/add-user.png" (click)="addteam_members(board)"/>
+  </div>
+</mat-card>
+</div>
+</div>
+<div style="margin-left: 10%;margin-top: 5%;">
+    <div style="display: flex;border: 2px solid;width: 60%;padding: 18px;border-radius: 20px;">
+    <img style="width: 10%;height: auto;" src="../assets/canvas.png"/>
+    <span style="font-size: xx-large;margin-top: 1.4%;margin-left: 3%;"><a matTooltip="Click here to Add oards" (click)="addboard()">Create a new board</a></span>
+  </div>
+</div>
+</div>
+
+ -->
+
+
+<div>
+  <app-header></app-header>
+</div>
+
+<div style="display: flex;">
+  <img class="hero" src="../assets/7457039.jpg" alt="">
+
+
+  <div style="margin-top: 2%;width: 45%; margin-left: 10%; font-family: 'Roboto Mono', monospace;">
+    <div *ngIf="booleanvalue" style="margin-left: 5%;margin-top: 5%; cursor: pointer;">
+      <div style="display: flex;border: 2px solid;width: 60%;padding: 10px;border-radius: 20px;">
+        <img style="width: 10%;height: auto;" src="../assets/canvas.png" />
+        <span style="font-size: 26px;margin-top: 1.4%;margin-left: 3%;"><a matTooltip="Click here to Add oards"
+            (click)="addboard()">Create a new board</a></span>
+      </div>
+    </div>
+    
+    <div *ngFor="let board of boardnames">
+      <mat-card id="card">
+        <div style="display: flex;">
+          <img style="width: 8%;height: auto; margin-top: 3.2%;margin-left: 2%;" src="../assets/board.png" />
+          <mat-card-title style="font-family: 'Roboto Mono', monospace;font-weight: 600;"
+            routerLink="{{board}}">{{board}}</mat-card-title>
+          <img *ngIf="booleanvalue" matTooltip="Click here to update Boards"
+            style="width: 4%;height: 30px;margin-top: 3.2%;margin-left: 2%;margin-right: 2%;" src="../assets/edit.png"
+            (click)="updateboards(board)" />
+          <img *ngIf="booleanvalue" matTooltip="Click here to Add Team_member"
+            style="width: 4%;height: 30px;margin-top: 3.2%;margin-left: auto; margin-right: 10%;"
+            src="../assets/add-user.png" (click)="addteam_members(board)" />
+
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

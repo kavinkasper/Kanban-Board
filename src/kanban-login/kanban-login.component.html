@@ -1,0 +1,41 @@
+<div>
+    <app-header-main></app-header-main>
+</div>
+<div style="display: flex;">
+    <div>
+        <img class="loginImage" src="../assets/attachment.png"/>
+    </div>
+    <div  >
+<form [formGroup]="Userdetails" (ngSubmit)="onsubmit()" id="loginform">
+    <h1 id="formheading">Login to explore Kanban features</h1>
+    <mat-form-field appearance='outline'>
+        <mat-label>Enter your Email</mat-label>
+        <input matInput type="email"formControlName="email"  required>
+        <mat-error *ngIf="emailvalue?.errors?.['invalidemail']">
+            Enter valid email id.
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance='outline'>
+          <mat-label>Enter your Password</mat-label>
+          <input matInput type="password" formControlName="password"  required>
+          <mat-error *ngIf="passwordvalue?.errors?.['required']">
+            Password is required.
+        </mat-error>
+        <mat-error *ngIf="passwordvalue?.errors?.['pattern']">
+            Password should have a minimum 8 characters with at least one symbol, one upper-case letter, one
+            lower-case letter, and one number.
+        </mat-error>
+        </mat-form-field>
+        <br>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!Userdetails.valid">LOGIN</button>
+</form>
+<!-- <div id="logintosignup">
+    <p>Don't have an Account yet?</p>
+    <p style="margin-left: 16%;color: rgb(157, 76, 233);" routerLink="/register">Create an Account</p>
+</div> -->
+</div>
+
+</div>

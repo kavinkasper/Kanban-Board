@@ -1,0 +1,87 @@
+<div>
+  <app-header></app-header>
+</div>
+
+<div style="display: flex;">
+<div>
+  <img style="width: 100%;height: auto;" src="../assets/create_new (1).png"/>
+</div>
+<div id="profileForm">
+<form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm.value)" >
+  <mat-form-field appearance="outline" style="margin-top: 7%;">
+    <mat-label>Email</mat-label>
+    <input matInput name="email" [(ngModel)]="details.email" required />
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+    <input matInput name="username" [(ngModel)]="details.username" required />
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput name="password" [(ngModel)]="details.password" type="password" required />
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Confirm Password</mat-label>
+    <input matInput name="confirmpassword" [(ngModel)]="details.confirmpassword" type="password" required />
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Mobile Number</mat-label>
+    <input matInput name="mobilenumber" [(ngModel)]="details.mobilenumber" type="number" required />
+  </mat-form-field>
+<br>
+  <button id="button" mat-raised-button type="submit" color="primary">Update Profile</button>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="Profiledetails" (ngSubmit)="onsubmit()"  >
+  <h1 >Welcome {{details.username}}</h1>
+  <button mat-icon-button (click)="changeboolean()">
+    <mat-icon>edit</mat-icon>
+  </button>
+    <mat-form-field appearance='outline'>
+      <mat-label>Enter your Email</mat-label>
+      <input matInput formControlName="email" [readonly]="formchangingvalue || !formchangingvalue" >
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance='outline'>
+        <mat-label>Enter your Name</mat-label>
+        <input matInput formControlName="username" [readonly]="!formchangingvalue">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your Password</mat-label>
+        <input matInput type="password" formControlName="password" [readonly]="!formchangingvalue">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your ConfirmPassword</mat-label>
+        <input matInput type="password" formControlName="confirmpassword" [readonly]="!formchangingvalue">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance='outline'>
+        <mat-label>Enter your Mobilenumber</mat-label>
+        <input matInput formControlName="mobilenumber" [readonly]="!formchangingvalue">
+      </mat-form-field>
+      <br>
+      <button style="margin-left: 50%;width: 60%;border-radius: 25px;padding: 10px;" mat-raised-button color="primary" type="submit" [disabled]="!Profiledetails.valid || !formchangingvalue">Update Profile</button>
+</form> -->
